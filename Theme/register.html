@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
+
   <script language="javascript">
 function checkID(id)
 {
@@ -11,9 +11,46 @@ sum += parseFloat(id.charAt(i))*(13-i); if((11-sum%11)%10!=parseFloat(id.charAt(
 return false; return true;}
 
 function checkForm()
-{ if(!checkID(document.form1.txtID.value))
+{
+  if(!checkID(document.form1.txtID.value)){
+
 alert('รหัสประชาชนไม่ถูกต้อง');
-else alert('รหัสประชาชนถูกต้อง เชิญผ่านได้');}
+}else{
+//document.getElementById("form1").submit();
+//alert('what');
+//txtid = document.form1.txtID.value;
+checkemail(document.form1.txtID.value,document.form1.email.value);
+
+}
+//alert('รหัสประชาชนถูกต้อง เชิญผ่านได้');}
+function checkemail(txtid, email){
+  var boolean;
+  var xmlhttp = new XMLHttpRequest();
+  var url = "../engine/checkemail.php?email="+email+"&&txtid="+txtid;
+  xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          myFunction(xmlhttp.responseText);
+      }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+
+  function myFunction(response) {
+      var arr = JSON.parse(response);
+      var boolean;
+      //plotlocation(arr[0].x,arr[0].y,arr[0].apname,arr[0].time,mac,arr[0].snr);
+      //alert(arr[0].boolean);
+      boolean = arr[0].boolean;
+      if(boolean==1){
+      alert('มีการใช้งานอีเมลหรือบัตรประชาชนนี้อยู่แล้ว');
+      window.location = "register.html";
+          }else{
+      document.getElementById("form1").submit();
+          }
+      }
+  		}
+//return boolean;
+}
 </script>
 
     <meta charset="utf-8">
@@ -28,7 +65,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
@@ -39,7 +76,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
   </head>
   <body>
   <section>
@@ -48,7 +85,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
 
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form" onsubmit="checkForm(); return false;" name="form1">
+		<form role="form" onsubmit="checkForm(); return false;" name="form1" id="form1" action="/dashgum/engine/registerpost.php" method="post">
 			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
@@ -57,7 +94,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
                         <input required type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
 					</div>
 				</div>
-                
+
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2" required>
@@ -65,30 +102,30 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
 				</div>
 			</div>
 			<div class="form-group">
-            
+
 				<input type="date" name="BirthDay" max="2016-12-31" id="BirthDay" class="form-control input-lg" placeholder="BirthDay" tabindex="3">
 			</div>
-            
+
 			<div class="form-group">
 				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
 			</div>
-            
+
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-                    
+
 <select name="Sex" class="form-control input-lg" placeholder="Sex">
   <option value="Male">Male</option>
   <option value="Female">Female</option>
 </select>
-                        
+
 					</div>
 				</div>
-                
+
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						  
-                         <select name="Country" class="form-control input-lg"> 
+
+                         <select name="Country" class="form-control input-lg" id="Country">
    <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>
@@ -268,12 +305,12 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
     <option value="Romania">Romania</option>
     <option value="Russia">Russian Federation</option>
     <option value="Rwanda">Rwanda</option>
-    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option> 
+    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
     <option value="Saint LUCIA">Saint LUCIA</option>
     <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
     <option value="Samoa">Samoa</option>
     <option value="San Marino">San Marino</option>
-    <option value="Sao Tome and Principe">Sao Tome and Principe</option> 
+    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
     <option value="Saudi Arabia">Saudi Arabia</option>
     <option value="Senegal">Senegal</option>
     <option value="Seychelles">Seychelles</option>
@@ -346,20 +383,20 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
 				</div>
 			</div>
             <div class="form-group">
-				<input type="text" name="txtID" id="text" class="form-control input-lg" placeholder="ID Card/Passport ID" tabindex="9" required>
-                
-                
+				<input type="text" name="txtID" id="txtID" class="form-control input-lg" placeholder="ID Card/Passport ID" tabindex="9" required>
+
+
                 </div>
-                
+
                   <div class="form-group">
 				<input type="text" name="Address" id="Address" class="form-control input-lg" placeholder="Address" tabindex="10">
                 </div>
-                
+
                 <div class="form-group">
-				<input type="text" name="Telephone Number" id="Telephone Number" class="form-control input-lg" placeholder="Telephone Number" tabindex="11" required>
+				<input type="text" name="Telephone" id="Telephone" class="form-control input-lg" placeholder="Telephone Number" tabindex="11" required>
                 </div>
-                
-                                         
+
+
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
@@ -371,7 +408,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
 					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 				</div>
 			</div>
-			
+
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
@@ -420,7 +457,7 @@ else alert('รหัสประชาชนถูกต้อง เชิญ�
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+
 
 
   </body>
