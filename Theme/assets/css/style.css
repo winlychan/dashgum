@@ -96,8 +96,8 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-  background-color: #86c8b4;
-  border-color: #48bcb4;
+  background-color: #ff865c;
+  border-color: #fd7647;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -1939,7 +1939,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #86c8b4;
+	background: #ff865c;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;
