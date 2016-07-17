@@ -37,7 +37,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Run Plus</b></a>
+            <a href="index.php" class="logo"><b>Run Plus</b></a>
             <!--logo end-->
             
             <div class="top-menu">
@@ -57,11 +57,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -73,7 +73,7 @@
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                  <li><a  href="Profile.html">Profile Details</a></li>
+                  <li><a  href="Profile.php">Profile Details</a></li>
                       </ul>
                   </li>
 
@@ -81,9 +81,9 @@
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>Bookings</a>
                       <ul class="sub">
-                          <li><a  href="Total Bookings.html">Total Bookings</a></li>
-                          <li><a  href="Upcoming.html">Upcoming</a></li>
-                          <li><a  href="Departed.html">Departed</a></li>
+                          <li><a  href="Total Bookings.php">Total Bookings</a></li>
+                          <li><a  href="Upcoming.php">Upcoming</a></li>
+                          <li><a  href="Departed.php">Departed</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -91,9 +91,9 @@
                           <i class="fa fa-book"></i>Records</a>
                           
                            <ul class="sub">
-                          <li><a  href="Run.html">Run</a></li>
-                          <li><a  href="Bike.html">Bike</a></li>
-                          <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
+                          <li><a  href="Run.php">Run</a></li>
+                          <li><a  href="Bike.php">Bike</a></li>
+                          <li><a  href="Tri Marathon.php">Tri Marathon</a></li>
                       </ul>
                       
                   <li class="sub-menu">
@@ -109,8 +109,8 @@
                           <span>My Points</span>
                       </a>
                       <ul class="sub"> 
-                          <li><a  href="Summary.html">Summary</a></li>
-                          <li><a  href="Redemption.html">Redemption</a></li>
+                          <li><a  href="Summary.php">Summary</a></li>
+                          <li><a  href="Redemption.php">Redemption</a></li>
                         
                       </ul>
                   </li>
@@ -485,7 +485,7 @@
       <footer class="site-footer">
           <div class="text-center">
               Page Name
-              <a href="blank.html#" class="go-top">
+              <a href="blank.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
