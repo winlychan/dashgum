@@ -91,7 +91,7 @@ function checkemail(txtid, email){
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-                        <input required type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" required>
 					</div>
 				</div>
 
@@ -106,7 +106,7 @@ function checkemail(txtid, email){
 					<div class="form-group">
                     
                     
-<select name="DOBDay" class="form-control input-lg" placeholder="date">
+<select name="DOBDay" class="form-control input-lg" placeholder="date" tabindex="4" required>
 	<option> - BirthDay - </option>
 	<option value="1">1</option>
 	<option value="2">2</option>
@@ -148,18 +148,18 @@ function checkemail(txtid, email){
 
 <select name="DOBMonth" class="form-control input-lg" placeholder="month">
 	<option> - Month - </option>
-	<option value="January">January</option>
-	<option value="Febuary">Febuary</option>
-	<option value="March">March</option>
-	<option value="April">April</option>
-	<option value="May">May</option>
-	<option value="June">June</option>
-	<option value="July">July</option>
-	<option value="August">August</option>
-	<option value="September">September</option>
-	<option value="October">October</option>
-	<option value="November">November</option>
-	<option value="December">December</option>
+	<option value="01">January</option>
+	<option value="02">Febuary</option>
+	<option value="03">March</option>
+	<option value="04">April</option>
+	<option value="05">May</option>
+	<option value="06">June</option>
+	<option value="07">July</option>
+	<option value="08">August</option>
+	<option value="09">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
 </select>
 </div>
 </div>
@@ -167,9 +167,15 @@ function checkemail(txtid, email){
 <div class="col-xs-6 col-sm-4">
 					<div class="form-group">
 
-<select name="DOBYear" class="form-control input-lg" placeholder="year">
+<select name="DOBYear" class="form-control input-lg" placeholder="year" tabindex="5" required>
 	<option> - Year - </option>
     
+    <option value="2005">2005</option>
+	<option value="2004">2004</option>
+	<option value="2003">2003</option>
+	<option value="2002">2002</option>
+	<option value="2001">2001</option>
+	<option value="2000">2000</option>
 	<option value="1999">1999</option>
 	<option value="1998">1998</option>
 	<option value="1997">1997</option>
@@ -230,14 +236,14 @@ function checkemail(txtid, email){
             </div>
             
 			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="6" required>
 			</div>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 
-<select name="Sex" class="form-control input-lg" placeholder="Sex">
+<select name="Sex" class="form-control input-lg" placeholder="Sex" tabindex="7" required>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
 </select>
@@ -248,7 +254,7 @@ function checkemail(txtid, email){
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 
-                         <select name="Country" class="form-control input-lg" id="Country">
+                         <select name="Country" class="form-control input-lg" id="Country" tabindex="8" required>
    <option value="AF">AFGHANISTAN</option>
     <option value="AL">ALBANIA</option>
     <option value="DZ">ALGERIA</option>
@@ -502,32 +508,48 @@ function checkemail(txtid, email){
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="7" required>
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="9" required>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="7" >
+						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="10" >
 					</div>
 				</div>
 			</div>
             <div class="form-group">
-				<input type="text" name="txtID" id="txtID" class="form-control input-lg" placeholder="ID Card/Passport ID" tabindex="9" required>
+				<input type="text" name="txtID" id="txtID" class="form-control input-lg" placeholder="ID Card/Passport ID" tabindex="11" required>
 
 
                 </div>
 
-                  <div class="form-group">
-				<input type="text" name="Address" id="Address" class="form-control input-lg" placeholder="Address" tabindex="10">
+				
+					
+                <div class="form-group">
+				<input type="text" name="Address" id="Address" class="form-control input-lg" placeholder="Address" tabindex="12">
+                </div>
+                
+                <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+				<input type="text" name="City" id="City" class="form-control input-lg" placeholder="City" tabindex="13">
+                </div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+				<input type="text" name="PostCode" id="PostCode" class="form-control input-lg" placeholder="PostCode" tabindex="14">
+                </div>
+                </div>
                 </div>
 
                 <div class="form-group">
-				<input type="text" name="Telephone" id="Telephone" class="form-control input-lg" placeholder="Telephone Number" tabindex="11" required>
+				<input type="text" name="Telephone" id="Telephone" class="form-control input-lg" placeholder="Telephone Number" tabindex="15" required>
                 </div>
 
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="16"></div>
 				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
 			</div>
 		</form>
