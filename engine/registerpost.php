@@ -11,7 +11,7 @@ $country                = $_POST['Country'];
 $password               = $_POST['password'];
 $password_confirmation  = $_POST['password_confirmation'];
 $txtid                  = $_POST['txtID'];
-$address                = $_POST['Address'];
+$address                = $_POST['Address'].' '.$_POST['City'].' '.$_POST['Postcode'];
 $telephone              = $_POST['Telephone'];
 $memberid = genid($country,$txtid);
 
