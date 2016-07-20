@@ -1,3 +1,21 @@
+<?php
+session_start();
+if(isset($_SESSION)){
+  $data['firstname'] = $_SESSION["firstname"];
+  $data['lastname'] = $_SESSION["lastname"];
+  $data['email'] = $_SESSION["email"];
+  $data['country'] = $_SESSION["country"];
+  $data['address'] = $_SESSION["address"];
+  $data['city'] = $_SESSION["city"];
+  $data['postcode'] = $_SESSION["postcode"];
+  $data['telephone'] = $_SESSION["telephone"];
+  $data['member_id'] = $_SESSION["member_id"];
+}else{
+  header('Location: ../theme/login.html');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +31,7 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
@@ -39,7 +57,7 @@
             <!--logo start-->
             <a href="index.html" class="logo"><b>Run Plus</b></a>
             <!--logo end-->
-            
+
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
@@ -47,7 +65,7 @@
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -56,10 +74,10 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
-              	  	
+
                   <li class="mt">
                       <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
@@ -89,29 +107,29 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>Records</a>
-                          
+
                            <ul class="sub">
                           <li><a  href="Run.html">Run</a></li>
                           <li><a  href="Bike.html">Bike</a></li>
                           <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
                       </ul>
-                      
+
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-tasks"></i>
                           <span>Change Password</span>
                       </a>
-                      
+
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>My Points</span>
                       </a>
-                      <ul class="sub"> 
+                      <ul class="sub">
                           <li><a  href="Summary.html">Summary</a></li>
                           <li><a  href="Redemption.html">Redemption</a></li>
-                        
+
                       </ul>
                   </li>
                 </li>
@@ -120,7 +138,7 @@
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -128,7 +146,7 @@
       <section id="main-content">
           <section class="wrapper site-min-height">
           	<h3><i class="fa fa-angle-right"></i> Profile</h3>
-     
+
         <div class="container" style="padding-top: 60px;">
   <h1 class="page-header">Edit Profile</h1>
   <div class="row">
@@ -142,33 +160,33 @@
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      
+
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
           <label class="col-lg-3 control-label">First name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Win" type="text" tabindex="1" required>
+            <input class="form-control" value="<?php print $data['firstname'];?>" type="text" tabindex="1" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Last name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Bishop" type="text" tabindex="2" required>
+            <input class="form-control" value="<?php print $data['lastname'];?>" type="text" tabindex="2" required>
           </div>
         </div>
-        
+
 <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="winly@hotmail.com" type="email" tabindex="3" required>
+            <input class="form-control" value="<?php print $data['email'];?>" type="email" tabindex="3" required>
           </div>
 </div>
-        
+
         <div class="form-group">
           <label class="col-lg-3 control-label">Country:</label>
           <div class="col-lg-8">
-              <select name="Country" class="form-control" tabindex="4" required> 
+              <select name="Country" class="form-control" tabindex="4" required>
    <option value="AF">AFGHANISTAN</option>
     <option value="AL">ALBANIA</option>
     <option value="DZ">ALGERIA</option>
@@ -418,36 +436,36 @@
 </select>
           </div>
         </div>
-       
+
         <div class="form-group">
           <label class="col-lg-3 control-label">Address:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="296/211" type="text" tabindex="5" required>
+            <input class="form-control" value="<?php print $data['address'];?>" type="text" tabindex="5" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">City:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Bangkok" type="text" tabindex="6" required>
+            <input class="form-control" value="<?php print $data['city'];?>" type="text" tabindex="6" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Postcode:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="10103" type="text" tabindex="7" required>
+            <input class="form-control" value="<?php print $data['postcode'];?>" type="text" tabindex="7" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Phone Number</label>
           <div class="col-lg-8">
-            <input class="form-control" value="02-11234444" type="text" tabindex="8" required>
+            <input class="form-control" value="<?php print $data['telephone'];?>" type="text" tabindex="8" required>
           </div>
         </div>
-        
+
         <div class="form-group">
           <label class="col-md-3 control-label">Username:</label>
           <div class="col-md-8">
-            <input class="form-control" value="janeuser" type="text" tabindex="9" required>
+            <input class="form-control" value="<?php print $data['email'];?>" type="text" tabindex="9" required>
           </div>
         </div>
         <div class="form-group">
@@ -473,9 +491,9 @@
       </form>
     </div>
   </div>
-</div>       
-  
-            
+</div>
+
+
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
@@ -506,7 +524,7 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+
   <script>
       //custom select box
 

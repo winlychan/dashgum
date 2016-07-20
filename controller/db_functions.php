@@ -42,9 +42,9 @@ class DB_Functions {
     }
 
 
-  public function insertregister($firstname, $lastname, $bday, $email, $sex, $country, $password, $txtid, $address, $telephone, $memberid){
-    $result = mysql_query("INSERT INTO `user`(`firstname`, `lastname`, `birthdate`, `email`, `sex`, `nationality`, `password`, `address`, `identity`, `telephone`, `member_id`)
-    VALUES ('$firstname', '$lastname', '$bday', '$email', '$sex', '$country', '$password', '$address', '$txtid', '$telephone', '$memberid')");
+  public function insertregister($firstname, $lastname, $bday, $email, $sex, $country, $password, $txtid, $address, $city, $postcode, $telephone, $memberid){
+    $result = mysql_query("INSERT INTO `user`(`firstname`, `lastname`, `birthdate`, `email`, `sex`, `nationality`, `password`, `address`, `city`, `postcode`, `identity`, `telephone`, `member_id`)
+    VALUES ('$firstname', '$lastname', '$bday', '$email', '$sex', '$country', '$password', '$address', $city, $postcode, '$txtid', '$telephone', '$memberid')");
   }
 
     /**
@@ -60,6 +60,16 @@ class DB_Functions {
             // user not existed
             return 0;
         }
+    }
+
+    public function getUser($email,$pass){
+      //$pass = md5($pass);
+      $result = mysql_query("SELECT * FROM user WHERE `email` = '$email' AND `password` = '$pass'");
+      if (mysql_num_rows($result) > 0) {
+          return mysql_fetch_array($result);
+      } else {
+          return false;
+      }
     }
 
 }

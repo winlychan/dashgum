@@ -11,13 +11,15 @@ $country                = $_POST['Country'];
 $password               = $_POST['password'];
 $password_confirmation  = $_POST['password_confirmation'];
 $txtid                  = $_POST['txtID'];
-$address                = $_POST['Address'].' '.$_POST['City'].' '.$_POST['Postcode'];
+$address                = $_POST['Address'];
+$city                   = $_POST['City'];
+$postcode               = $_POST['Postcode'];
 $telephone              = $_POST['Telephone'];
 $memberid = genid($country,$txtid);
 
 $db = new DB_Functions();
 $password = md5($password);
-$db->insertregister($firstname, $lastname, $bday, $email, $sex, $country, $password, $txtid, $address, $telephone, $memberid);
+$db->insertregister($firstname, $lastname, $bday, $email, $sex, $country, $password, $txtid, $address, $city, $postcode, $telephone, $memberid);
 //insertregister($firstname, $lastname, $bday, $email, $sex, $country, $password, $password_confirmation, $txtid, $address, $telephone, $memberid)
 header("Location: ../Theme/login.html");
 function genid($country,$txtid){
