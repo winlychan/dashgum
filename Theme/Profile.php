@@ -74,13 +74,13 @@ if(isset($_SESSION)){
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-<<<<<<< HEAD:Theme/Profile.php
+
 
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-=======
-              
+
+
               	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
->>>>>>> origin/master:Theme/Profile.php
+
               	  <h5 class="centered">Marcel Newman</h5>
 
                   <li class="mt">
@@ -131,17 +131,17 @@ if(isset($_SESSION)){
                           <i class="fa fa-th"></i>
                           <span>My Points</span>
                       </a>
-<<<<<<< HEAD:Theme/Profile.php
+
                       <ul class="sub">
                           <li><a  href="Summary.html">Summary</a></li>
                           <li><a  href="Redemption.html">Redemption</a></li>
 
-=======
-                      <ul class="sub"> 
+
+                      <ul class="sub">
                           <li><a  href="Summary.php">Summary</a></li>
                           <li><a  href="Redemption.php">Redemption</a></li>
-                        
->>>>>>> origin/master:Theme/Profile.php
+
+
                       </ul>
                   </li>
                 </li>
