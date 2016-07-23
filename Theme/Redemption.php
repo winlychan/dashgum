@@ -37,9 +37,12 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Track Race</b></a>
+            <a href="index.php" class="logo"><b>Track Race</b></a>
             <!--logo end-->
-           
+            <div class="nav notify-row" id="top_menu">
+              
+                <!--  notification end -->
+            </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
@@ -57,11 +60,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -73,7 +76,7 @@
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                  <li><a  href="Profile.html">Profile Details</a></li>
+                  <li><a  href="Profile.php">Profile Details</a></li>
                       </ul>
                   </li>
 
@@ -81,9 +84,9 @@
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>Bookings</a>
                       <ul class="sub">
-                          <li><a  href="Total Bookings.html">Total Bookings</a></li>
-                          <li><a  href="Upcoming.html">Upcoming</a></li>
-                          <li><a  href="Departed.html">Departed</a></li>
+                       	  <li><a  href="Total Bookings.php">Total Bookings</a></li>
+                          <li><a  href="Upcoming.php">Upcoming</a></li>
+                          <li><a  href="Departed.php">Departed</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -91,9 +94,9 @@
                           <i class="fa fa-book"></i>Records</a>
                           
                            <ul class="sub">
-                          <li><a  href="Run.html">Run</a></li>
-                          <li><a  href="Bike.html">Bike</a></li>
-                          <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
+                          <li><a  href="Run.php">Run</a></li>
+                          <li><a  href="Bike.php">Bike</a></li>
+                          <li><a  href="Tri Marathon.php">Tri Marathon</a></li>
                       </ul>
                       
                   <li class="sub-menu">
@@ -109,8 +112,8 @@
                           <span>My Points</span>
                       </a>
                       <ul class="sub"> 
-                          <li><a  href="Summary.html">Summary</a></li>
-                          <li><a  href="Redemption.html">Redemption</a></li>
+                          <li><a  href="Summary.php">Summary</a></li>
+                          <li><a  href="Redemption.php">Redemption</a></li>
                         
                       </ul>
                   </li>
@@ -127,81 +130,22 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> My Points</h3>
+          	<h3><i class="fa fa-angle-right"></i> Redemption</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
-                
-  <div>Summary</div>
-  <br>
-  
-<table width="800" border="1" align="center">
-  <tbody>
-    <tr>
-      <td >Account ID</td>
-      <td>Name</td>
-      <td>Total Points</td>
-     
-    </tr>
-    <tr>
-      <td>TH12345</td>
-      <td>Mr. ABC  DEA</td>
-      <td>123,321 Points</td>
-     
-    </tr>
-      
-  </tbody>
-</table>
-<br>
-
-<div>Transactions</div>
-<br>
-
-<table border="1" align="center" class= "table table-striped">
-  <tbody>
-    <tr>
-      <td>Transaction date</td>
-      <td>Transaction Type	</td>
-      <td>Booking ID</td>
-      <td>Booking Detail</td>
-      <td>Total Price</td>
-      <td>Amount Charged</td>
-      <td>Points Earned</td>
-      <td>Remarks</td>
-    </tr>
-    <tr>
-      <td>13 Mar 2016</td>
-      <td>Points Booking</td>
-      <td>123456</td>
-      <td>Standard Chartner</td>
-      <td>1,500 Baht</td>
-      <td>1,500 Baht</td>
-      <td>150 Point</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </tbody>
-</table>
+          		<p>Place your content here.</p>
+          		</div>
+          	</div>
 			
-            
-            
-  </section><! --/wrapper -->
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-            Track Race
-              <a href="blank.html#" class="go-top">
+              Track Race
+              <a href="blank.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

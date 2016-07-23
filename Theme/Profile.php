@@ -55,7 +55,7 @@ if(isset($_SESSION)){
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Run Plus</b></a>
+            <a href="index.php" class="logo"><b>Run Plus</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -74,12 +74,17 @@ if(isset($_SESSION)){
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+<<<<<<< HEAD:Theme/Profile.php
 
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+=======
+              
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+>>>>>>> origin/master:Theme/Profile.php
               	  <h5 class="centered">Marcel Newman</h5>
 
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -91,7 +96,7 @@ if(isset($_SESSION)){
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                  <li><a  href="Profile.html">Profile Details</a></li>
+                  <li><a  href="Profile.php">Profile Details</a></li>
                       </ul>
                   </li>
 
@@ -99,9 +104,9 @@ if(isset($_SESSION)){
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>Bookings</a>
                       <ul class="sub">
-                          <li><a  href="Total Bookings.html">Total Bookings</a></li>
-                          <li><a  href="Upcoming.html">Upcoming</a></li>
-                          <li><a  href="Departed.html">Departed</a></li>
+                          <li><a  href="Total Bookings.php">Total Bookings</a></li>
+                          <li><a  href="Upcoming.php">Upcoming</a></li>
+                          <li><a  href="Departed.php">Departed</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -109,9 +114,9 @@ if(isset($_SESSION)){
                           <i class="fa fa-book"></i>Records</a>
 
                            <ul class="sub">
-                          <li><a  href="Run.html">Run</a></li>
-                          <li><a  href="Bike.html">Bike</a></li>
-                          <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
+                          <li><a  href="Run.php">Run</a></li>
+                          <li><a  href="Bike.php">Bike</a></li>
+                          <li><a  href="Tri Marathon.php">Tri Marathon</a></li>
                       </ul>
 
                   <li class="sub-menu">
@@ -126,10 +131,17 @@ if(isset($_SESSION)){
                           <i class="fa fa-th"></i>
                           <span>My Points</span>
                       </a>
+<<<<<<< HEAD:Theme/Profile.php
                       <ul class="sub">
                           <li><a  href="Summary.html">Summary</a></li>
                           <li><a  href="Redemption.html">Redemption</a></li>
 
+=======
+                      <ul class="sub"> 
+                          <li><a  href="Summary.php">Summary</a></li>
+                          <li><a  href="Redemption.php">Redemption</a></li>
+                        
+>>>>>>> origin/master:Theme/Profile.php
                       </ul>
                   </li>
                 </li>
@@ -153,6 +165,7 @@ if(isset($_SESSION)){
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
+
         <img src="assets/img/win.jpg" class="avatar img-circle img-thumbnail" alt="avatar" width="100" height="100">
         <h6>Upload a photo</h6>
         <input type="file" class="text-center center-block well well-sm">
@@ -502,7 +515,7 @@ if(isset($_SESSION)){
       <footer class="site-footer">
           <div class="text-center">
               Page Name
-              <a href="blank.html#" class="go-top">
+              <a href="blank.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

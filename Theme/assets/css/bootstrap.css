@@ -944,9 +944,9 @@ img {
 }
 .img-thumbnail {
   display: inline-block;
-  width: 100% \9;
+  width: 150px;
   max-width: 100%;
-  height: auto;
+  height: 150px;
   padding: 4px;
   line-height: 1.42857143;
   background-color: #fff;

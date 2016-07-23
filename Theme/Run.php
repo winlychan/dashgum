@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title> Track Race  -  Record Your Life</title>
+    <title>Track Race - Record Your Life</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +37,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Track Race</b></a>
+            <a href="index.php" class="logo"><b>Track Race</b></a>
             <!--logo end-->
            
             <div class="top-menu">
@@ -57,11 +57,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -73,7 +73,7 @@
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                  <li><a  href="Profile.html">Profile Details</a></li>
+                  <li><a  href="Profile.php">Profile Details</a></li>
                       </ul>
                   </li>
 
@@ -81,9 +81,9 @@
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>Bookings</a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Total Bookings</a></li>
-                          <li><a  href="gallery.html">Upcoming</a></li>
-                          <li><a  href="todo_list.html">Departed</a></li>
+                          <li><a  href="Total Bookings.php">Total Bookings</a></li>
+                          <li><a  href="Upcoming.php">Upcoming</a></li>
+                          <li><a  href="Departed.php">Departed</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -91,9 +91,9 @@
                           <i class="fa fa-book"></i>Records</a>
                           
                            <ul class="sub">
-                          <li><a  href="Run.html">Run</a></li>
-                          <li><a  href="Bike.html">Bike</a></li>
-                          <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
+                          <li><a  href="Run.php">Run</a></li>
+                          <li><a  href="Bike.php">Bike</a></li>
+                          <li><a  href="Tri Marathon.php">Tri Marathon</a></li>
                       </ul>
                       
                   <li class="sub-menu">
@@ -109,8 +109,8 @@
                           <span>My Points</span>
                       </a>
                       <ul class="sub"> 
-                          <li><a  href="Summary.html">Summary</a></li>
-                          <li><a  href="Redemption.html">Redemption</a></li>
+                          <li><a  href="Summary.php">Summary</a></li>
+                          <li><a  href="Redemption.php">Redemption</a></li>
                         
                       </ul>
                   </li>
@@ -127,16 +127,15 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Tri Marathon Records</h3>
+          	<h3><i class="fa fa-angle-right"></i> Run Records</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
-          		<p>Your statistics</p>
+          		<p>Your Result</p>
           		</div>
           	</div>
             
             <li>Please Select Your Event</li>
-            
-                
+       
        <!--Result -->     
 <select>
   <option value="Standard Charter">Standard Charter</option>
@@ -145,7 +144,9 @@
   <option value="Night run">Night run</option>
 </select>  
             
+            
             <table border="1" align="center" class="table table-condensed"> 
+         
   <tbody>
     <tr>
       <td>Date</td>	
@@ -168,15 +169,42 @@
   </tbody>
 </table>
 			
+        <div class="container">
+  <h2>Photo for This Event</h2>
+  <p>Standard Charter Event.</p>            
+  <div class="row">
+    <div class="col-md-4">
+      <a href="assets/img/win.jpg" class="thumbnail">
+        <p>Standard Charter</p>    
+        <img src="assets/img/win.jpg" alt="Pulpit Rock" style="width:250px;height:auto">
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="assets/img/5769.jpg" class="thumbnail">
+        <p>Standard Charter</p>
+        <img src="assets/img/5769.jpg" alt="Moustiers Sainte Marie" style="width:250px;height:auto">
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="assets/img/1726.jpg" class="thumbnail">
+        <p>Standard Charter</p>      
+        <img src="assets/img/1726.jpg" alt="Cinque Terre" style="width:250px;height:auto">
+      </a>
+    </div>
+  </div>
+</div>
+ 
+            
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
+
 
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
              Track Race
-              <a href="blank.html#" class="go-top">
+              <a href="blank.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

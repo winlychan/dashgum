@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Track Race  - Record Your Life</title>
+    <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -37,12 +37,13 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Track Race</b></a>
+            <a href="index.php" class="logo"><b>Run Plus</b></a>
             <!--logo end-->
            
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.html
+                    ">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -57,11 +58,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -73,7 +74,7 @@
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                  <li><a  href="Profile.html">Profile Details</a></li>
+                  <li><a  href="Profile.php">Profile Details</a></li>
                       </ul>
                   </li>
 
@@ -81,9 +82,9 @@
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>Bookings</a>
                       <ul class="sub">
-                          <li><a  href="Total Bookings.html">Total Bookings</a></li>
-                          <li><a  href="Upcoming.html">Upcoming</a></li>
-                          <li><a  href="Departed.html">Departed</a></li>
+                          <li><a  href="Total Bookings.php">Total Bookings</a></li>
+                          <li><a  href="Upcoming.php">Upcoming</a></li>
+                          <li><a  href="Departed.php">Departed</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -91,9 +92,9 @@
                           <i class="fa fa-book"></i>Records</a>
                           
                            <ul class="sub">
-                          <li><a  href="Run.html">Run</a></li>
-                          <li><a  href="Bike.html">Bike</a></li>
-                          <li><a  href="Tri Marathon.html">Tri Marathon</a></li>
+                          <li><a  href="Run.php">Run</a></li>
+                          <li><a  href="Bike.php">Bike</a></li>
+                          <li><a  href="Tri Marathon.php">Tri Marathon</a></li>
                       </ul>
                       
                   <li class="sub-menu">
@@ -109,8 +110,8 @@
                           <span>My Points</span>
                       </a>
                       <ul class="sub"> 
-                          <li><a  href="Summary.html">Summary</a></li>
-                          <li><a  href="Redemption.html">Redemption</a></li>
+                          <li><a  href="Summary.php">Summary</a></li>
+                          <li><a  href="Redemption.php">Redemption</a></li>
                         
                       </ul>
                   </li>
@@ -127,7 +128,7 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Total Bookings</h3>
+          	<h3><i class="fa fa-angle-right"></i> Upcoming</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
    
@@ -137,10 +138,10 @@
   <tbody>
     <tr>
       <td rowspan="6"> 
-      <a class="image_container" > <img src="assets/img/rungarmin.jpg"  alt = "" />
+      <a class="image_container" ><img src="assets/img/rungarmin.jpg"  alt = "" />
 	  </a>
       </td>
-      <td>Event Name</td>
+      <td>Name</td>
       <td>Standard</td>
   	 </tr>
     <tr>
@@ -168,16 +169,16 @@
     
  	 </div>
   </div>
-   			
-	</section><!-- /wrapper-->
-      </section><!-- /MAIN CONTENT-->
-    
+			
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-             Track Race
-              <a href="blank.html#" class="go-top">
+             Run Plus
+              <a href="blank.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
