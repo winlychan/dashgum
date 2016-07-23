@@ -22,7 +22,7 @@ if($data == false){
   $_SESSION["postcode"] = $data['postcode'];
   $_SESSION["telephone"] = $data['telephone'];
   $_SESSION["member_id"] = $data['member_id'];
-  header('Location: ../theme/Profile.html');
+  header('Location: ../theme/Profile.php');
 }
 
  ?>
