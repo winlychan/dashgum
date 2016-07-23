@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION)){
+if($_SESSION!=null){
   $data['firstname'] = $_SESSION["firstname"];
   $data['lastname'] = $_SESSION["lastname"];
   $data['email'] = $_SESSION["email"];
@@ -10,10 +10,55 @@ if(isset($_SESSION)){
   $data['postcode'] = $_SESSION["postcode"];
   $data['telephone'] = $_SESSION["telephone"];
   $data['member_id'] = $_SESSION["member_id"];
+  $data['image'] = $_SESSION["image"];
 }else{
   header('Location: ../theme/login.html');
 }
+//*******************Upload Image function*****************
 
+//echo substr('abcdef', -6); // f
+if(isset($_GET['confirm'])){
+  ?>
+  <script>alert("Password Not Match");</script>
+  <?php
+}
+
+   if(isset($_FILES['image'])){
+     include_once '../controller/db_functions.php';
+      $db = new DB_Functions();
+      $errors= array();
+      $date = new DateTime();
+      $file_name = $data['member_id'].$date->getTimestamp().substr($_FILES['image']['name'],-5);
+      //$file_name = $_FILES['image']['name'];
+      //$file_name = $_FILES['image']['name'];
+      $file_size = $_FILES['image']['size'];
+      $file_tmp  = $_FILES['image']['tmp_name'];
+      $file_type = $_FILES['image']['type'];
+      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
+      $expensions= array("jpeg","jpg","png");
+
+      if(in_array($file_ext,$expensions)=== false){
+         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+      }
+
+      if($file_size > 2097152){
+         $errors[]='File size must be excately 2 MB';
+      }
+
+      if(empty($errors)==true){
+         move_uploaded_file($file_tmp,"../Theme/assets/img/".$file_name);
+         $db->updateAvatar("../Theme/assets/img/".$file_name,$data['member_id']);
+         $data['image'] = $db->selectAvatar($data['member_id']);
+         //echo "Success";
+
+
+      }else{
+         print_r($errors);
+      }
+   }
+
+//*******************************************************-
 ?>
 
 <!DOCTYPE html>
@@ -162,40 +207,43 @@ if(isset($_SESSION)){
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
 
-        <img src="assets/img/win.jpg" class="avatar img-circle img-thumbnail" alt="avatar" width="100" height="100">
-        <h6>Upload a photo</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <img src="<?php print $data['image']; ?>" class="avatar img-circle img-thumbnail" alt="avatar" width="100" height="100">
+        <h6><?php if(isset($_FILES['image'])){ print "Avatar Uploaded"; }else{ print "Photo Upload"; }?></h6>
+      <form action"" id="form1" method="POST" enctype="multipart/form-data" >
+        <input type="file" name="image" class="text-center center-block well well-sm"/>
+        <input type="submit" value="Upload"/>
+      </form>
       </div>
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
       <h3>Personal info</h3>
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" id="form2" action="../engine/updateprofile.php" method="POST">
         <div class="form-group">
           <label class="col-lg-3 control-label">First name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['firstname'];?>" type="text" tabindex="1" required>
+            <input class="form-control" value="<?php print $data['firstname'];?>" name="firstname" type="text" tabindex="1" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Last name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['lastname'];?>" type="text" tabindex="2" required>
+            <input class="form-control" value="<?php print $data['lastname'];?>" name="lastname" type="text" tabindex="2" required>
           </div>
         </div>
 
 <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['email'];?>" type="email" tabindex="3" required>
+            <input class="form-control" value="<?php print $data['email'];?>" name="email" type="email" tabindex="3" required>
           </div>
 </div>
 
         <div class="form-group">
           <label class="col-lg-3 control-label">Country:</label>
           <div class="col-lg-8">
-              <select name="Country" class="form-control" tabindex="4" required>
+              <select name="country" class="form-control" tabindex="4" required>
    <option value="AF">AFGHANISTAN</option>
     <option value="AL">ALBANIA</option>
     <option value="DZ">ALGERIA</option>
@@ -449,50 +497,44 @@ if(isset($_SESSION)){
         <div class="form-group">
           <label class="col-lg-3 control-label">Address:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['address'];?>" type="text" tabindex="5" required>
+            <input class="form-control" value="<?php print $data['address'];?>" name="address" type="text" tabindex="5" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">City:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['city'];?>" type="text" tabindex="6" required>
+            <input class="form-control" value="<?php print $data['city'];?>" name="city" type="text" tabindex="6" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Postcode:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['postcode'];?>" type="text" tabindex="7" required>
+            <input class="form-control" value="<?php print $data['postcode'];?>" name="postcode" type="text" tabindex="7" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Phone Number</label>
           <div class="col-lg-8">
-            <input class="form-control" value="<?php print $data['telephone'];?>" type="text" tabindex="8" required>
+            <input class="form-control" value="<?php print $data['telephone'];?>" name="telephone" type="text" tabindex="8" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="col-md-3 control-label">Username:</label>
-          <div class="col-md-8">
-            <input class="form-control" value="<?php print $data['email'];?>" type="text" tabindex="9" required>
-          </div>
-        </div>
-        <div class="form-group">
           <label class="col-md-3 control-label">Password:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password" tabindex="10">
+            <input class="form-control" value="" type="password" name="password" tabindex="10">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password" tabindex="11">
+            <input class="form-control" value="" type="password" name="confirm_password" tabindex="11">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary" value="Save Changes" type="button">
+            <input class="btn btn-primary" value="Save Changes" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
           </div>
@@ -503,7 +545,7 @@ if(isset($_SESSION)){
 </div>
 
 
-		</section><! --/wrapper -->
+		</section>
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->

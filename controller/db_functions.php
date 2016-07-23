@@ -62,6 +62,30 @@ class DB_Functions {
         }
     }
 
+    public function updateAvatar($filename,$memberid){
+      mysql_query("UPDATE user SET image='$filename' WHERE member_id='$memberid'");
+    }
+
+    public function selectAvatar($memberid){
+      $result = mysql_query("SELECT image FROM user WHERE `member_id` = '$memberid'");
+      if (mysql_num_rows($result) > 0) {
+          $data = mysql_fetch_array($result);
+          return $data['image'];
+      } else {
+          return false;
+      }
+    }
+
+    public function updateProfilewithoutpassword($firstname, $lastname, $email, $country, $address, $city, $postcode, $telephone, $memberid){
+        mysql_query("UPDATE user SET firstname='$firstname', lastname='$lastname', email='$email', nationality='$country', address='$address', city='$city', postcode='$postcode', telephone='$telephone'  WHERE member_id='$memberid'");
+    }
+
+    public function updateProfilewithpassword($firstname, $lastname, $email, $country, $address, $city, $postcode, $telephone, $password, $memberid){
+      $password = md5($password);
+      //$confirm_password = md5($confirm_password);
+        mysql_query("UPDATE user SET firstname='$firstname', lastname='$lastname', email='$email', nationality='$country', address='$address', city='$city', postcode='$postcode', telephone='$telephone', password='$password'  WHERE member_id='$memberid'");
+    }
+
     public function getUser($email,$pass){
       //$pass = md5($pass);
       $result = mysql_query("SELECT * FROM user WHERE `email` = '$email' AND `password` = '$pass'");
