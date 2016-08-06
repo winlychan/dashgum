@@ -120,7 +120,7 @@ if(isset($_GET['confirm'])){
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="Profile.php"><img src="<?php print $data['image']; ?>" class="img-circle" width="60"></a></p>
 
               	  <h5 class="centered">Marcel Newman</h5>
 
