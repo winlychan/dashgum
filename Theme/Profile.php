@@ -105,7 +105,7 @@ if(isset($_GET['confirm'])){
 
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="../engine/destroysession.php">Logout</a></li>
             	</ul>
             </div>
         </header>
